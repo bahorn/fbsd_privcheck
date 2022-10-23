@@ -14,3 +14,13 @@ make load
 ```
 
 You can find the IDs defined in `/usr/src/sys/sys/priv.h`
+
+
+To see what you can do, run:
+```
+seq 0 700 | xargs -n 1 ./tools/privcheck | grep "0^"
+```
+
+Then lookup the first number in the header file.
+
+Normal users are unlikely to find something, and users in the operator group have ~4 extra permissions.
